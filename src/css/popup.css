@@ -276,7 +276,7 @@
   height: 100%;
 }
 
-/* NEWS icon styling for projects section */
+/* NEWS icon styling for projects section - GREEN COLOR */
 .news-icon {
   display: inline-flex;
   align-items: center;
@@ -285,20 +285,20 @@
   height: 13px;
   margin-left: 6px;
   cursor: pointer;
-  background-color: #accc4c;
+  background-color: #accc4c !important;
   border-radius: 3px;
   transition: all 0.2s ease;
   font-size: 8px;
   color: white;
   vertical-align: middle;
   flex-shrink: 0;
-  border: 1px solid #accc4c;
+  border: 1px solid #accc4c !important;
 }
 
 .news-icon:hover {
-  background-color: #9bb843;
+  background-color: #9bb843 !important;
   color: white;
-  border-color: #9bb843;
+  border-color: #9bb843 !important;
   transform: scale(1.1);
 }
 
