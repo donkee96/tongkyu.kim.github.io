@@ -23,29 +23,37 @@
       font-family: 'Roboto', Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
+      scroll-behavior: smooth;
     }
     .container {
       width: 75vw;
-      margin: 100px auto 40px auto;
+      margin: 0 auto 40px auto;
       background: var(--card);
-      border-radius: 16px;
-      box-shadow: 0 4px 32px rgba(0,0,0,0.1);
+      border-radius: 0;
+      box-shadow: none;
       padding: 48px 56px 56px 56px;
       min-height: 80vh;
-      border: 1px solid var(--border);
+      border: none;
     }
     .navbar {
-      position: fixed;
+      position: sticky;
       top: 0;
       left: 0;
-      width: 100vw;
+      width: 100%;
       background: var(--bg);
       color: var(--text);
       z-index: 1000;
       display: flex;
       justify-content: center;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-      border-bottom: 2px solid var(--border);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+    .navbar-content {
+      width: 75vw;
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 56px;
     }
     .navbar ul {
       list-style: none;
@@ -79,13 +87,13 @@
       margin-bottom: 56px;
     }
     .profile-photo {
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
+      width: 450px;
+      height: 450px;
+      border-radius: 0;
       object-fit: cover;
-      border: 5px solid var(--navy-light);
-      background: #f0f0f0;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      border: none;
+      background: #ffffff;
+      box-shadow: none;
     }
     .profile-info {
       flex: 1;
@@ -122,7 +130,7 @@
       font-size: 2.1rem;
       margin-bottom: 20px;
       color: var(--navy-dark);
-      border-bottom: 2px solid var(--border);
+      border-bottom: 2px solid var(--text);
       padding-bottom: 8px;
       font-weight: 700;
       letter-spacing: 0.5px;
@@ -135,16 +143,65 @@
     .positions-list li, .publications-list li {
       margin-bottom: 20px;
       padding-bottom: 14px;
-      border-bottom: 1px solid var(--border);
+      border-bottom: none;
       color: var(--text);
+    }
+    .experience-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+    .experience-content {
+      flex: 1;
+      padding-right: 20px;
+    }
+    .experience-date {
+      text-align: left;
+      white-space: nowrap;
+      font-weight: 500;
+      color: var(--text);
+      min-width: 200px;
     }
     .positions-list li:last-child, .publications-list li:last-child {
       border-bottom: none;
+    }
+    .title-section {
+      background: var(--bg);
+      padding: 40px 56px 20px 56px;
+      text-align: center;
+      border-bottom: 2px solid var(--text);
+    }
+    .title-section h1 {
+      margin: 0;
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: var(--navy);
+      letter-spacing: 1.5px;
+    }
+    .title-section .subtitle {
+      margin: 10px 0 0 0;
+      font-size: 1.2rem;
+      color: var(--muted);
+      font-weight: 500;
     }
     @media (max-width: 900px) {
       .container {
         width: 98vw;
         padding: 18px 6vw;
+      }
+      .title-section {
+        padding: 20px 6vw 15px 6vw;
+      }
+      .title-section h1 {
+        font-size: 2.5rem;
+      }
+      .title-section .subtitle {
+        font-size: 1rem;
+      }
+      .navbar-content {
+        width: 98vw;
+        padding-left: 6vw;
       }
       .profile-section {
         flex-direction: column;
@@ -152,33 +209,41 @@
         gap: 18px;
       }
       .profile-photo {
-        width: 200px;
-        height: 200px;
+        width: 300px;
+        height: 300px;
       }
     }
   </style>
 </head>
 <body>
   <nav class="navbar">
-    <ul>
-      <li><a href="#profile">Profile</a></li>
-      <li><a href="#positions">Positions</a></li>
-      <li><a href="#publications">Publications</a></li>
-    </ul>
+    <div class="navbar-content">
+      <ul>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#outreach">Outreach</a></li>
+      </ul>
+    </div>
   </nav>
   <div class="container">
     <section id="profile" class="profile-section">
-      <img src="profile.jpg" alt="Profile Photo" class="profile-photo">
+      <img src="src/images/profile.JPG" alt="Profile Photo" class="profile-photo">
       <div class="profile-info">
         <h1>Tongkyu Kim</h1>
         <div style="margin-bottom: 8px; font-size: 1.08rem; color: var(--navy-dark); font-weight: 600;">
           Researcher, International Cooperation Division, Korea Development Institute (KDI GKEDC)
         </div>
-        <div style="margin-bottom: 12px; font-size: 1.01rem; color: var(--muted);">
-          +82 10 5407 1872 | <a href="mailto:tongkyu.kim@outlook.com" style="color: var(--text); text-decoration: underline;">tongkyu.kim@outlook.com</a>
-        </div>
-        <p style="margin-bottom: 18px;">
+        <p style="margin-bottom: 18px; font-size: 1rem;">
           Interdisciplinary researcher with expertise in climate governance and environmental behavior. Research focuses on the integrity and implementation of Article 6 mechanisms, decision-making in carbon markets, and behavioral responses to transboundary mitigation policies. Demonstrated record of high-impact research and policy analysis across academic, governmental, and multilateral settings.
+        </p>
+        <p style="margin-bottom: 18px; font-size: 1rem;">
+          Previously, he served at the Climate and Energy Cooperation Center of the Korean Ministry of Foreign Affairs, where he supported climate diplomacy and presented Korea's climate missions to international policymakers. A notable moment was delivering Korea's Carbon Free Energy Initiative to ambassadors and climate leaders at the Vatican. He also contributed to government and corporate sustainable development projects, including KSP policy consultation reports and the Energy Mega City Act.
+        </p>
+        <p style="margin-bottom: 18px; font-size: 1rem;">
+          He holds an M.A. in Environmental Policy and a B.A. in International Studies from Hanyang University, and his multidisciplinary research continues to advance the global shift toward cleaner energy.
         </p>
         <div class="sns-links">
           <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" title="LinkedIn">LinkedIn</a>
@@ -186,31 +251,190 @@
         </div>
       </div>
     </section>
-    <section id="positions">
-      <h2>Positions</h2>
+    <section id="education">
+      <h2>EDUCATION & TRAINING</h2>
       <ul class="positions-list">
         <li>
-          <strong>Senior Researcher</strong> at <em>Institute of Example Science</em> (2023–Present)<br>
-          Working on AI-driven data analysis and scientific computing.
+          <strong>DEGREES</strong><br><br>
+          <div class="experience-item">
+            <div class="experience-content">M.A. in Environmental Policy, Hanyang University | GPA: 3.86/4.00, 100-point scale: 97.9/100</div>
+            <div class="experience-date">Completed Aug. 2024</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-content">B.A. in International Studies, Hanyang University | GPA: 3.44/4.00, 100-point scale: 92.5/100</div>
+            <div class="experience-date">Completed Aug. 2022</div>
+          </div>
+          <br>
+          <strong>CERTIFICATES</strong><br><br>
+          <div class="experience-item">
+            <div class="experience-content">Climate Change Negotiation Strategies and Diplomacy, Korea National Diplomatic Academy</div>
+            <div class="experience-date">Completed Dec. 2024</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-content">Statistical Analysis using R, Statistics Training Institute (Statistics Korea)</div>
+            <div class="experience-date">Completed Mar. 2024</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-content">Circular Economy & Sustainability Strategies, University of Cambridge</div>
+            <div class="experience-date">Completed Jun. 2023</div>
+          </div>
         </li>
+      </ul>
+    </section>
+    <section id="experience">
+      <h2>EXPERIENCE</h2>
+      <ul class="positions-list">
         <li>
-          <strong>Postdoctoral Fellow</strong> at <em>Example University</em> (2021–2023)<br>
-          Research in computational biology and machine learning.
+          <strong>RELEVANT EXPERIENCE</strong><br><br>
+          <div class="experience-item">
+            <div class="experience-content">Researcher, International Cooperation Division, Korea Development Institute (KDI)</div>
+            <div class="experience-date">Oct. 2025–Present</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-content">Tracking and Recognition (Transparency) Analyst, UNFCCC REMOTE / PART-TIME</div>
+            <div class="experience-date">Sep. 2025–Present</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-content">Researcher, Climate & Energy Cooperation Center, Ministry of Foreign Affairs</div>
+            <div class="experience-date">Sep. 2024–Aug. 2025</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-content">Research Associate, Global Circular Economy Center, Hanyang University</div>
+            <div class="experience-date">Sep. 2022–Aug. 2024</div>
+          </div>
+          <br>
+          <strong>OTHER EXPERIENCE</strong><br><br>
+          <div class="experience-item">
+            <div class="experience-content">Advisory Board (ESG), Korea Commission for Corporate Partnership</div>
+            <div class="experience-date">Sep. 2025–Present</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-content">School Representative, Graduate Student Council, Hanyang University</div>
+            <div class="experience-date">Oct. 2022–Jan. 2024</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-content">Sergeant (squad leader for 5 months), 703 Special Assault Commando, Republic of Korea Army</div>
+            <div class="experience-date">May 2017–Feb. 2019</div>
+          </div>
         </li>
       </ul>
     </section>
     <section id="publications">
-      <h2>Publications</h2>
+      <h2>PUBLICATIONS</h2>
       <ul class="publications-list">
         <li>
-          Kim, T., et al. (2025). "Title of Your Most Recent Paper." <em>Journal of Example Research</em>.
+          <strong>PEER-REVIEWED ARTICLES [PUBLISHED / ONLINE / ACCEPTED]</strong><br><br>
+          1. Kim, T.*; Son, H.*; Roh, T.; Managi, S.; Yoo, S.† (2025), Unraveling the paradox of behavioral rebounds in solar power adoption: Evidence from Japanese households, <em>Energy Research & Social Science</em><br><br>
+          2. Kim, T.*; Choi, Y. C.† (2025), Rethinking environmental justice in transboundary carbon storage: An antidote for NIMBY in South Korea, <em>Energy Policy</em><br><br>
+          3. Choi, Y. C.*; Kim, T.; Lee, H.† (2025), Impact of US and EU environmental regulations on eco-innovation in Korean battery firms: An analysis based on institutional theory and resource-based view, <em>Journal of Cleaner Production</em><br><br>
+          4. Choi, H.*; Kim, T.; Son, H.; Kim, D.; Park, K.; Roh, T.† (2024), How does consumer awareness of WEEE affect reverse logistics? Extended triple bottom line approach, <em>Energy & Environment</em><br><br>
+          <strong>ARTICLES UNDER REVIEW</strong><br><br>
+          5. Kim, T.*; Kim, Y.*; Son, H.*; Han, J.; Cho, Y.; Roh, T.† (R3 under review), Can technological and customer competences enable the firm to be greener? Simultaneous consideration of competence-based view and social license to operate, <em>Business Ethics, the Environment & Responsibility</em><br><br>
+          6. Kim, T.*; Han, J.; Chang, T.; Jo, S.† (R1 under review), The integrity gap in voluntary carbon markets: Causal mapping and prioritization of core carbon principles, <em>Carbon Management</em><br><br>
+          <strong>POLICY PAPERS & OTHER PUBLICATIONS</strong><br><br>
+          7. Choi, Y. C.†; Hwang, S.; Im, H.; Kim, T. (2024-2025) Climate & Energy Focus, <em>Ministry of Foreign Affairs</em>, [Monthly ministerial white paper for the Climate Change, Energy, Environment and Scientific Affairs Bureau] Covered topics: Carbon offsetting, hydrogen economy, climate finance, AI for energy, atmospheric forecasting<br><br>
+          8. Yoon, Y.†; Jo, S.; Kim, T. (2024), Proposal for Energy Mega City Act: Supporting Equitable Regional Development Through Distributed Power Generation, <em>Democratic Party of Korea</em>, [Policy proposal for National Assembly], Non-attributed to ensure political impartiality as a government researcher
         </li>
+      </ul>
+    </section>
+    <section id="projects">
+      <h2>PROJECTS</h2>
+      <ul class="positions-list">
         <li>
-          Kim, T., et al. (2024). "Another Example Publication." <em>Example Science Journal</em>.
+          <strong>GOVERNMENT / PUBLIC</strong><br><br>
+          <div class="experience-item">
+            <div class="experience-content">P.I. Keeyong Chung (2025), Ambassadorial Task Force on Intergovernmental Climate Governance: Responding to the Mandate of Newly Elected Lee Administration, Ministry of Foreign Affairs, [Ad hoc TF: Prepared briefing materials on climate diplomacy agendas for ministerial submission]</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-content">P.I. Younkyoo Kim (2022–2027), Global Energy Technology and Policy Convergence Program for Carbon Neutrality, Ministry of Trade, Industry and Energy, [Research grant for global capacity building: Supported 2022–24 project cycle]</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-content">P.I. Byeongwoon Choi (2021–2025), Human Resource Development Project in Circular Remanufacturing Industry, Ministry of Trade, Industry and Energy, [Research grant for domestic capacity building: Supported 2022–24 project cycle]</div>
+          </div>
+          <br>
+          <strong>BILATERAL / MULTILATERAL</strong><br><br>
+          <div class="experience-item">
+            <div class="experience-content">HOD. Minyoung Han (2025), 4th U.S.A.-ROK Civil Space Dialogue, Ministry of Foreign Affairs – U.S. Department of State, [Documented briefing materials]</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-content">HOD. Minyoung Han (2025), Annex for APEC Summit Declaration (Gyeongju AI Roadmap for a Sustainable Tomorrow), Ministry of Foreign Affairs, [Drafted agenda items and documented concept notes]</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-content">HOD. Minyoung Han (2024), First part of the Fifth Session of the Intergovernmental Negotiating Committee on Plastic Pollution (INC–5.1), Ministry of Foreign Affairs – United Nation Environment Programme, [Supported project cycle (Sep.–Dec.), analyzed and categorized country bloc positions]</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-content">P.I. Younkyoo Kim (2023–2024), Strengthening Green Industrial Estate Development Strategy to Support Sustainable Economic Growth in The Republic of Indonesia, Korea Trade Investment Promotion Agency (KOTRA), [KSP policy consultation, Korea→Indonesia: Documented RFP and official proposal]</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-content">P.I. Dongwoon Roh (2022–2023), Green Productive Transformation of the Industry in Harmony with the Environment, Korea Trade Investment Promotion Agency (KOTRA), [KSP policy consultation, Korea→Cuba: Supported full project cycle]</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-content">P.I. Younkyoo Kim (2022–2023), Capacity Building in the Development of Public Policies that Promote the Linkage Between the Circular Economy and Digitalization in the Industry and the Development of Greener Production in Uruguay, Korea Development Institute (KDI), [KSP policy consultation, Korea→Uruguay: Documented and synthesized final report]</div>
+          </div>
+          <br>
+          <strong>CORPORATE</strong><br><br>
+          <div class="experience-item">
+            <div class="experience-content">P.I. Younkyoo Kim (2023), Legislation Trends to Meet Global Sustainability Standards: EU Supply Chain Due Diligence Directive and Battery Directive, LG Energy Solution, [Drafted final report and presentation material]</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-content">P.I. Younkyoo Kim (2022–2023), Environmental Analysis and Business Model Development Research for Entering the Green Hydrogen and Renewable Energy Business in Latin America, Korea Electric Power Corporation (KEPCO), [Supported full project cycle]</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section id="outreach">
+      <h2>PUBLIC OUTREACH</h2>
+      <ul class="positions-list">
+        <li>
+          <strong>AS SPEAKER</strong><br><br>
+          <div class="experience-item">
+            <div class="experience-content">Tongkyu Kim (Jul. 2025), Update on Korea's climate diplomacy strategy and the role of international cooperation, Inter-Ministerial Roundtable on Climate and Energy Policy, Sejong, South Korea, [Policy briefing, delivered in Korean]</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-content">Tongkyu Kim (May 2025), Building consensus for a global plastic treaty: Key implications from Busan INC-5 (Empirical insights from LLM-based sentiment analysis), The 11th 3R International Scientific Conference on Material Cycle and Waste Management (3RINCs), Jeju, South Korea, [Oral presentation]</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-content">Rajae Naji El Mekkaoui, Jaime de Bourdon de Parme, Tongkyu Kim, et al. (Nov. 2024), Key outcomes of COP29 and Korea's energy policy, Vatican Climate Change Forum, Rome, Italy, [Third session speaker]</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-content">Tongkyu Kim (Nov. 2023), Impact of U.S. Inflation Reduction Act (IRA) on South Korean battery industry: Evaluating its effect using fuzzy AHP, Korean Hydrogen & New Energy Society, Jeju, South Korea, [Oral presentation]</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-content">Tongkyu Kim, Hyeonyu Son (Oct. 2023), Identifying circular economy enablers in South Korean logistics industry: Utilizing a multi-criteria decision-making analysis, The Korean Society of Climate Change Research, Gyeongju, South Korea, [Oral presentation]</div>
+          </div>
+          <br>
+          <strong>OTHER SUPPORTING ROLES</strong><br><br>
+          <div class="experience-item">
+            <div class="experience-content">Minyoung Han, Gyeyeon Cho, et al. (2024-2025) Policy Roundtables with Key Stakeholders*, Ministry of Foreign Affairs, Seoul, South Korea, [Arranged, organized, and summarized +5 high-level dialogues] * Ministry of Finance; Ministry of Environment; Ministry of Trade, Industry and Energy; World Bank; Green Climate Fund; etc.</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-content">Julio Friedmann, Antoine Halff, et al. (Jul. 2025) International Conference on Artificial Intelligence and Climate Change, Ministry of Foreign Affairs, Seoul, South Korea, [As host & organizer]</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-content">Keeyong Chung, Benedict Chia, et al. (Mar. 2025) 10th Bilateral Climate Discussion Between the Republic of Korea and Singapore, Ministry of Foreign Affairs – National Climate Change Secretariat, [Day 2 host & moderator]</div>
+          </div>
+          <div class="experience-item">
+            <div class="experience-content">Carl Greenfield, Aldillar Noor Rakheimah, et al. (Oct. 2024), International Conference on Transboundary Carbon Capture and Storage, Ministry of Foreign Affairs, Seoul, South Korea, [As host & organizer]</div>
+          </div>
         </li>
       </ul>
     </section>
   </div>
+  <script>
+    // Enhanced smooth scrolling for navigation links
+    document.querySelectorAll('.navbar a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
 
