@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=width, initial-scale=1.0">
+  <title>Tongkyu Kim - CV</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+    
+    :root {
+      --navy: #000000;
+      --navy-dark: #000000;
+      --navy-light: #333333;
+      --accent: #000000;
+      --bg: #ffffff;
+      --text: #000000;
+      --card: #ffffff;
+      --border: #cccccc;
+      --muted: #666666;
+    }
+    body {
+      margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .container {
+      width: 75vw;
+      margin: 100px auto 40px auto;
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.1);
+      padding: 48px 56px 56px 56px;
+      min-height: 80vh;
+      border: 1px solid var(--border);
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      background: var(--bg);
+      color: var(--text);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+      border-bottom: 2px solid var(--border);
+    }
+    .navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 40px;
+    }
+    .navbar li {
+      display: inline;
+    }
+    .navbar a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.13rem;
+      padding: 20px 0 18px 0;
+      display: inline-block;
+      letter-spacing: 0.5px;
+      transition: color 0.2s, border-bottom 0.2s;
+      border-bottom: 2px solid transparent;
+    }
+    .navbar a:hover, .navbar a:focus {
+      color: var(--text);
+      border-bottom: 2px solid var(--text);
+    }
+    .profile-section {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      margin-bottom: 56px;
+    }
+    .profile-photo {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--navy-light);
+      background: #f0f0f0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+    .profile-info {
+      flex: 1;
+    }
+    .profile-info h1 {
+      margin: 0 0 14px 0;
+      font-size: 2.7rem;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: 1px;
+    }
+    .profile-info p {
+      margin: 0 0 20px 0;
+      font-size: 1.18rem;
+      color: var(--muted);
+    }
+    .sns-links a {
+      margin-right: 22px;
+      color: var(--text);
+      font-size: 1.35rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+      border-bottom: 2px solid transparent;
+    }
+    .sns-links a:hover {
+      color: var(--text);
+      border-bottom: 2px solid var(--text);
+    }
+    section {
+      margin-bottom: 56px;
+    }
+    section h2 {
+      font-size: 2.1rem;
+      margin-bottom: 20px;
+      color: var(--navy-dark);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 8px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .positions-list, .publications-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .positions-list li, .publications-list li {
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+    .positions-list li:last-child, .publications-list li:last-child {
+      border-bottom: none;
+    }
+    @media (max-width: 900px) {
+      .container {
+        width: 98vw;
+        padding: 18px 6vw;
+      }
+      .profile-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+      .profile-photo {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#positions">Positions</a></li>
+      <li><a href="#publications">Publications</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <section id="profile" class="profile-section">
+      <img src="profile.jpg" alt="Profile Photo" class="profile-photo">
+      <div class="profile-info">
+        <h1>Tongkyu Kim</h1>
+        <div style="margin-bottom: 8px; font-size: 1.08rem; color: var(--navy-dark); font-weight: 600;">
+          Researcher, International Cooperation Division, Korea Development Institute (KDI GKEDC)
+        </div>
+        <div style="margin-bottom: 12px; font-size: 1.01rem; color: var(--muted);">
+          +82 10 5407 1872 | <a href="mailto:tongkyu.kim@outlook.com" style="color: var(--text); text-decoration: underline;">tongkyu.kim@outlook.com</a>
+        </div>
+        <p style="margin-bottom: 18px;">
+          Interdisciplinary researcher with expertise in climate governance and environmental behavior. Research focuses on the integrity and implementation of Article 6 mechanisms, decision-making in carbon markets, and behavioral responses to transboundary mitigation policies. Demonstrated record of high-impact research and policy analysis across academic, governmental, and multilateral settings.
+        </p>
+        <div class="sns-links">
+          <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" title="LinkedIn">LinkedIn</a>
+          <a href="https://orcid.org/your-orcid" target="_blank" title="ORCID">ORCID</a>
+        </div>
+      </div>
+    </section>
+    <section id="positions">
+      <h2>Positions</h2>
+      <ul class="positions-list">
+        <li>
+          <strong>Senior Researcher</strong> at <em>Institute of Example Science</em> (2023–Present)<br>
+          Working on AI-driven data analysis and scientific computing.
+        </li>
+        <li>
+          <strong>Postdoctoral Fellow</strong> at <em>Example University</em> (2021–2023)<br>
+          Research in computational biology and machine learning.
+        </li>
+      </ul>
+    </section>
+    <section id="publications">
+      <h2>Publications</h2>
+      <ul class="publications-list">
+        <li>
+          Kim, T., et al. (2025). "Title of Your Most Recent Paper." <em>Journal of Example Research</em>.
+        </li>
+        <li>
+          Kim, T., et al. (2024). "Another Example Publication." <em>Example Science Journal</em>.
+        </li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
+

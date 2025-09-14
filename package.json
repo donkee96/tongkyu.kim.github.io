@@ -1,0 +1,25 @@
+{
+  "name": "tongkyu-kim-website",
+  "version": "1.0.0",
+  "description": "Personal CV website for Tongkyu Kim",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "serve": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "build": "echo 'Static site - no build step required'",
+    "deploy": "echo 'Push to main branch to deploy to GitHub Pages'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/donkee96/tongkyu.kim.github.io.git"
+  },
+  "keywords": [
+    "cv",
+    "resume",
+    "portfolio",
+    "github-pages"
+  ],
+  "author": "Tongkyu Kim",
+  "license": "MIT"
+}
