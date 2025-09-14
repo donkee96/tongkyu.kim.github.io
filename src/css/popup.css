@@ -324,26 +324,26 @@
   height: 13px;
   margin-left: 6px;
   cursor: pointer;
-  background-color: #FF4203;
+  background-color: #fd812c;
   border-radius: 3px;
   transition: all 0.2s ease;
   font-size: 8px;
   color: white;
   vertical-align: middle;
   flex-shrink: 0;
-  border: 1px solid #FF4203;
+  border: 1px solid #fd812c;
 }
 
 .orange-icon:hover {
-  background-color: #e6390a;
+  background-color: #e6710a;
   color: white;
-  border-color: #e6390a;
+  border-color: #e6710a;
   transform: scale(1.1);
 }
 
 .orange-icon::before {
-  content: "orange";
-  font-size: 7.5px;
+  content: "news";
+  font-size: 6.5pt;
   line-height: 1;
   font-weight: 600;
   font-style: normal;
