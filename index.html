@@ -89,10 +89,14 @@
       border-bottom: 2px solid #5e717d;
     }
     .profile-section {
+      min-height: calc(100vh - 70px); /* 70px is approx navbar height, adjust if needed */
       display: flex;
-      align-items: center;
+      align-items: center; /* Center vertically */
+      justify-content: center;
       gap: 48px;
-      margin-bottom: 56px;
+      margin-bottom: 0;
+      padding-top: 0;
+      transform: translateY(-40px); /* Move 40px up from center */
     }
     .profile-photo {
       width: 560px;
@@ -309,6 +313,7 @@
         padding-left: 6vw;
       }
       .profile-section {
+        min-height: calc(100vh - 56px); /* adjust for mobile navbar height */
         flex-direction: column;
         align-items: flex-start;
         gap: 18px;
@@ -333,7 +338,6 @@
       </ul>
     </div>
   </nav>
-  <div style="height: 170px;"></div>
   <div class="container">
     <section id="profile" class="profile-section">
       <img src="src/images/profile.JPG" alt="Profile Photo" class="profile-photo">
@@ -365,9 +369,6 @@
           Interdisciplinary climate researcher specializing in climate governance and environmental behavior, with expertise in the integrity and implementation of Article 6 mechanisms, decision-making in carbon markets, and behavioral responses to transboundary mitigation policies. Demonstrated record of high-impact research and policy analysis across academic, governmental, and multilateral settings.
         </p>
         <p class="profile-description" style="margin-bottom: 18px; font-size: 1rem;">
-          Currently a Researcher at the International Cooperation Division of the Global Knowledge Exchange and Development Center, Korea Development Institute (KDI), where he contributes to international policy consultation and knowledge-sharing initiatives.
-        </p>
-        <p class="profile-description" style="margin-bottom: 18px; font-size: 1rem;">
           Previously served at the Climate and Energy Cooperation Center of the Korean Ministry of Foreign Affairs, supporting climate diplomacy and presenting Korea's climate missions to global policymakers. A notable achievement was delivering Korea's Carbon Free Energy Initiative to ambassadors and climate leaders at the Vatican. He also worked on government and corporate projects in sustainable development, including KSP policy consultation reports and the Energy Mega City Act.
         </p>
         <p class="profile-description" style="margin-bottom: 18px; font-size: 1rem;">
@@ -375,10 +376,6 @@
         </p>
       </div>
     </section>
-    <div style="height: 180px;"></div>
-    <div style="display: flex; justify-content: center; margin-bottom: 40px;">
-      <hr style="border: none; border-top: 2px solid var(--text); width: 120px; margin: 0;">
-    </div>
     <section id="education">
       <h2>EDUCATION & TRAINING</h2>
       <ul class="positions-list">
