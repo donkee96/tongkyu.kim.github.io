@@ -112,10 +112,17 @@
     }
     .profile-info h1 {
       margin: 0 0 14px 0;
-      font-size: 2.7rem;
+      font-size: 2.7rem; /* Reduced by 3pt (from 3.7rem to 2.7rem) */
       font-weight: 800;
       color: var(--navy);
       letter-spacing: 1px;
+    }
+    .profile-section > .profile-info > div:first-of-type {
+      margin-bottom: 20px;
+      font-size: 1.275rem;
+      color: #5e717d;
+      font-weight: normal;
+      padding-left: 1pt; /* Add 1pt left padding */
     }
     .profile-info p {
       margin: 0 0 20px 0;
@@ -343,8 +350,8 @@
       <img src="src/images/profile.JPG" alt="Profile Photo" class="profile-photo">
       <div class="profile-info">
         <h1>TONGKYU KIM <span style="font-size: 1.35rem; font-weight: normal;">(김동규, 金東奎)</span></h1>
-        <div style="margin-bottom: 20px; font-size: 1.275rem; color: var(--navy-dark); font-weight: normal;">
-          Researcher at the Korea Development Institute
+        <div style="margin-bottom: 20px; font-size: 1.275rem; color: #5e717d; font-weight: normal;">
+          Environmental Researcher
         </div>
         <div class="sns-links" style="margin-bottom: 16px;">
           <a href="https://scholar.google.com/citations?user=iJIXEOwAAAAJ&hl=en" target="_blank" title="Google Scholar">
@@ -401,8 +408,7 @@
         <li>
           <strong>RELEVANT EXPERIENCE</strong><br><br>
           <table class="numbered-table no-numbers">
-            <tr><td class="content-col">-&nbsp;&nbsp;&nbsp;&nbsp;Researcher, International Cooperation Division, Korea Development Institute (KDI)</td><td class="date-col">Oct. 2025–Present</td><td class="icon-col"><a href="https://www.gkedc.go.kr" target="_blank" rel="noopener noreferrer"><span class="web-icon"></span></a><span class="popup-icon"></span></td></tr>
-            <tr><td class="content-col">-&nbsp;&nbsp;&nbsp;&nbsp;Tracking and Recognition (Transparency) Analyst, UNFCCC <sup>REMOTE / PART-TIME</sup></td><td class="date-col">Sep. 2025–Present</td><td class="icon-col"><a href="https://unfccc.int" target="_blank" rel="noopener noreferrer"><span class="web-icon"></span></a><span class="popup-icon"></span></td></tr>
+            <tr><td class="content-col">-&nbsp;&nbsp;&nbsp;&nbsp;Data and Research Assistant, United Nations Development Programme <sup>REMOTE / PART-TIME</sup></td><td class="date-col">Sep. 2025–Present</td><td class="icon-col"><a href="https://unfccc.int" target="_blank" rel="noopener noreferrer"><span class="web-icon"></span></a><span class="popup-icon"></span></td></tr>
             <tr><td class="content-col">-&nbsp;&nbsp;&nbsp;&nbsp;Researcher, Climate & Energy Cooperation Center, Ministry of Foreign Affairs</td><td class="date-col">Sep. 2024–Aug. 2025</td><td class="icon-col"><a href="https://energy.mofa.go.kr" target="_blank" rel="noopener noreferrer"><span class="web-icon"></span></a><span class="popup-icon"></span></td></tr>
             <tr><td class="content-col">-&nbsp;&nbsp;&nbsp;&nbsp;Research Associate, Global Circular Economy Center, Hanyang University</td><td class="date-col">Sep. 2022–Aug. 2024</td><td class="icon-col"><a href="http://gcec.hanyang.ac.kr" target="_blank" rel="noopener noreferrer"><span class="web-icon"></span></a><span class="popup-icon"></span></td></tr>
           </table>
