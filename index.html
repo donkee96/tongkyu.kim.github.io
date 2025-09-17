@@ -53,10 +53,16 @@
       transition: all 0.3s ease;
     }
     .navbar-content {
-      width: 65vw;
+      width: 70vw;
       display: flex;
       justify-content: flex-start;
       padding-left: 0;
+    }
+    @media (max-width: 900px) {
+      .navbar-content {
+        width: 98vw;
+        padding-left: 0;
+      }
     }
     .navbar ul {
       list-style: none;
@@ -317,7 +323,7 @@
       }
       .navbar-content {
         width: 98vw;
-        padding-left: 6vw;
+        padding-left: 0;
       }
       .profile-section {
         min-height: calc(100vh - 56px); /* adjust for mobile navbar height */
